@@ -80,7 +80,7 @@ module Octopus
           conn.verify!
           retry if (retries += 1) < 3
         else
-          raise e.message
+          raise e
         end
       end
     end
