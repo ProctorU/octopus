@@ -159,6 +159,7 @@ module Octopus
           end
         else
           select_connection.transaction(options, &block)
+        end
       rescue ActiveRecord::StatementInvalid => e
         if connection_bad(e.message)
           Octopus.logger.error "Octopus.logger.error transaction: #{e.message}"
